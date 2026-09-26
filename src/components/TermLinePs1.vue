@@ -1,7 +1,7 @@
 <script setup>
-  import { ref } from "vue";
+import { ref } from 'vue'
 
-  const hostname = ref(window.location.hostname);
+const hostname = ref(window.location.hostname)
 </script>
 
 <template>
