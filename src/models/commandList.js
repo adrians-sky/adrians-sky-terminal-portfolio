@@ -1,4 +1,5 @@
 // Commands and Outputs
+import dedent from 'dedent'
 
 const commandList = new Map([
   [

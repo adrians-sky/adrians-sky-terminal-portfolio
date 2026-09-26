@@ -1,5 +1,7 @@
 // Stores Command History
 
+import { reactive } from 'vue'
+
 const history = reactive({
   commands: [],
   cleared: false,
