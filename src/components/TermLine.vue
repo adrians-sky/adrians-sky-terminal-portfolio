@@ -5,8 +5,8 @@ import TermLineInput from './TermLineInput.vue'
 
 <template>
   <div id="termLine">
-    <Ps1 />
-    <Input />
+    <TermLinePs1 />
+    <TermLineInput />
   </div>
 </template>
 
