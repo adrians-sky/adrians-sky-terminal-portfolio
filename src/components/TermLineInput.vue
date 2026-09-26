@@ -25,6 +25,7 @@ const sendCommand = () => {}
   border: none;
   outline: none;
   font-family: 'Cascadia Mono', sans-serif;
-  color: #d2d4de;
+  font-size: 1rem;
+  color: var(--white);
 }
 </style>

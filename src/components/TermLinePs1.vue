@@ -11,10 +11,10 @@
 
 <style scoped>
 #ps1-prefix {
-  color: #c0ca8e;
+  color: var(--green);
 }
 
 #ps1-suffix {
-  color: #91acd1;
+  color: var(--blue);
 }
 </style>
