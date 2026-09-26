@@ -1,9 +1,17 @@
 <script setup>
 import TermLine from './components/TermLine.vue'
+import TermOutput from './components/TermOutput.vue'
+import TermWelcome from './components/TermWelcome.vue'
+import commandHistory from './models/commandHistory.js'
 </script>
 
 <template>
+  <TermWelcome v-if="!commandHistory.isCleared()" />
   <TermLine />
+  <div v-for="command in commandHistory.getCommands()">
+    <TermOutput :output="command.output" />
+    <TermLine />
+  </div>
 </template>
 
 <style>

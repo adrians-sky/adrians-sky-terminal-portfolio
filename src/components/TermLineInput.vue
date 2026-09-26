@@ -1,14 +1,53 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, watch, nextTick } from 'vue'
+import handleCommand from '../utils/handleCommand.js'
+import commandHistory from '../models/commandHistory.js'
 
 const command = ref('')
 const disabled = ref(false)
+const termLineInputRef = ref(null)
 
-const sendCommand = () => {}
+// Focus on command input
+const focusInput = () => {
+  termLineInputRef.value?.focus()
+}
+
+// Focus on command input on page load
+// and make any click focus on the command input
+onMounted(() => {
+  focusInput()
+  document.addEventListener('click', focusInput)
+})
+
+// Send command
+const sendCommand = () => {
+  handleCommand(command.value)
+  if (command.value === 'clear' || command.value === 'cls') {
+    command.value = ''
+  } else {
+    disabled.value = true
+  }
+}
+
+// Re-focus on input when commands are cleared
+watch(
+  () => commandHistory.getCommands().length,
+  async (length) => {
+    if (length === 0) {
+      command.value = ''
+      disabled.value = false
+
+      // Re-focus on command input
+      await nextTick()
+      focusInput()
+    }
+  },
+)
 </script>
 
 <template>
   <input
+    ref="termLineInputRef"
     id="termLineInput"
     type="text"
     v-model="command"
