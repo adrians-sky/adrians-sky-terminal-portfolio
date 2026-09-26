@@ -15,7 +15,7 @@ const commandList = new Map([
   A terminal portfolio website designed by Adrian Curammeng.
 
   +----------------------------------------------------------+
-  This website's source code can be found on GitHub <a href="https://github.com/adrians-sky">here</a>.
+  This website's source code can be found on GitHub <a href="https://github.com/adrians-sky/adrians-sky-terminal-portfolio">here</a>.
   +----------------------------------------------------------+
 
   For a list of available commands, type \`<span style="color:#91acd1">help</span>\`.
