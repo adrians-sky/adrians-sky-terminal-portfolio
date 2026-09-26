@@ -6,6 +6,9 @@ import commandHistory from '../models/commandHistory.js'
 const handleCommand = (command) => {
   if (command === 'clear' || command === 'cls') {
     commandHistory.clear()
+  } else if (command === 'source') {
+    window.open('https://github.com/adrians-sky/adrians-sky-terminal-portfolio', '_blank')
+    commandHistory.addCommand(command, 'Opening source code...')
   } else if (command.split(' ')[0] === 'echo') {
     commandHistory.addCommand(command, command.split(' ').slice(1).join(' '))
   } else if (commandList.has(command)) {

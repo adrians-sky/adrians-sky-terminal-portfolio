@@ -24,9 +24,12 @@ const commandList = new Map([
   [
     'help',
     dedent`
-    welcome         - view welcome message
+    welcome         - View Welcome Message
+    source          - View this website's source code on GitHub
+    pwd             - Where Are We?
     `,
   ],
+  ['pwd', window.location.hostname],
 
   // TODO:
   // - about
