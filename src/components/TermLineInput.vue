@@ -9,7 +9,7 @@ const sendCommand = () => {}
 
 <template>
   <input
-    :id="termlineInput"
+    id="termLineInput"
     type="text"
     v-model="command"
     @keyup.enter="sendCommand"
