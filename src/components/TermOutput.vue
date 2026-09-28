@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
   <div>
-    <div id="termOutput" v-html="output"></div>
+    <div id="termOutput" v-html="props.output"></div>
   </div>
 </template>
 
