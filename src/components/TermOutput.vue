@@ -1,7 +1,4 @@
 <script setup>
-import TermLinePs1 from './TermLinePs1.vue'
-import TermLineInput from './TermLineInput.vue'
-
 const props = defineProps({
   output: String,
 })
