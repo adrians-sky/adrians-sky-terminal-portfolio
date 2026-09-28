@@ -8,7 +8,7 @@ import commandHistory from './models/commandHistory.js'
 <template>
   <TermWelcome v-if="!commandHistory.isCleared()" />
   <TermLine />
-  <div v-for="command in commandHistory.getCommands()">
+  <div v-for="command in commandHistory.getCommands()" :key="command.command">
     <TermOutput :output="command.output" />
     <TermLine />
   </div>
