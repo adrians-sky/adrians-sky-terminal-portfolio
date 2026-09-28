@@ -27,6 +27,7 @@ const commandList = new Map([
     welcome         - View Welcome Message
     source          - View this website's source code on GitHub
     pwd             - Where Are We?
+    nvim            - View Neovim Setup repository
     `,
   ],
   ['pwd', window.location.hostname],
