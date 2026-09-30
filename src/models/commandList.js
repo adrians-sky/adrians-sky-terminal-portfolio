@@ -25,9 +25,10 @@ const commandList = new Map([
     'help',
     dedent`
     welcome         - View Welcome Message
+    clear           - Clear the terminal screen
     source          - View this website's source code on GitHub
-    pwd             - Where Are We?
     nvim            - View Neovim Setup repository
+    pwd             - Where Are We?
     `,
   ],
   ['pwd', window.location.hostname],
