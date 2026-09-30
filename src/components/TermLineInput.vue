@@ -22,7 +22,7 @@ onMounted(() => {
 // Send command
 const sendCommand = () => {
   handleCommand(command.value)
-  if (command.value === 'clear' || command.value === 'cls') {
+  if (command.value === 'clear') {
     command.value = ''
   } else {
     disabled.value = true

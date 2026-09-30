@@ -6,7 +6,6 @@ import commandHistory from '../models/commandHistory.js'
 // Lookup table for commands and behaviour
 const commandTable = {
   clear: () => commandHistory.clear(),
-  cls: () => commandHistory.clear(),
   source: () => {
     window.open('https://github.com/adrians-sky/adrians-sky-terminal-portfolio', '_blank')
     commandHistory.addCommand(command, 'Opening source code...')
