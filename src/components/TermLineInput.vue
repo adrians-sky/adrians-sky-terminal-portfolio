@@ -21,7 +21,7 @@ onMounted(() => {
 
 // Send command
 const sendCommand = () => {
-  handleCommand(command.value)
+  handleCommand(command.value.trim())
   if (command.value === 'clear') {
     command.value = ''
   } else {

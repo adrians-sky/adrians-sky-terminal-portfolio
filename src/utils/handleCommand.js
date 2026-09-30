@@ -18,15 +18,16 @@ const commandTable = {
 
 const handleCommand = (command) => {
   const commandHandler = commandTable[command]
+  const splitCommand = command.trim().split(/\s+/)
 
   if (commandHandler) {
     commandHandler(command)
-  } else if (command.split(' ')[0] === 'echo') {
-    commandHistory.addCommand(command, command.split(' ').slice(1).join(' '))
+  } else if (splitCommand[0] === 'echo') {
+    commandHistory.addCommand(command, splitCommand.slice(1).join(' '))
   } else if (commandList.has(command)) {
-    commandHistory.addCommand(command, commandList.get(command))
+    commandHistory.addCommand(command, commandList.get(splitCommand.join(' ')))
   } else {
-    commandHistory.addCommand(command, `${command}: command not found`)
+    commandHistory.addCommand(command, `${splitCommand.join(' ')}: command not found`)
   }
 }
 
