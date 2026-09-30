@@ -28,10 +28,19 @@ const commandList = new Map([
     clear           - Clear the terminal screen
     source          - View this website's source code on GitHub
     nvim            - View Neovim Setup repository
+    themes          - Change colour themes
     pwd             - Where Are We?
     `,
   ],
   ['pwd', window.location.hostname],
+  [
+    'themes',
+    dedent`
+    iceberg   tokyonight-night    catppuccin-macchiato    rose-pine
+
+    Usage: themes [THEME]
+    `,
+  ],
 
   // TODO:
   // - about

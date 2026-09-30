@@ -1,8 +1,18 @@
 <script setup>
+import { onMounted } from 'vue'
 import TermLine from './components/TermLine.vue'
 import TermOutput from './components/TermOutput.vue'
 import TermWelcome from './components/TermWelcome.vue'
 import commandHistory from './models/commandHistory.js'
+import './colourSchemes.css'
+
+// Load saved color scheme
+onMounted(() => {
+  const currentTheme = localStorage.getItem('colour-theme')
+  if (currentTheme) {
+    document.documentElement.setAttribute('colour-theme', currentTheme)
+  }
+})
 </script>
 
 <template>
@@ -16,18 +26,6 @@ import commandHistory from './models/commandHistory.js'
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono');
-
-:root {
-  --background-color: #161821;
-  --black: #6b7089;
-  --blue: #91acd1;
-  --cyan: #95c4ce;
-  --green: #c0ca8e;
-  --purple: #ada0d3;
-  --red: #e98989;
-  --white: #d2d4de;
-  --yellow: #e9b189;
-}
 
 *::selection {
   color: var(--black);

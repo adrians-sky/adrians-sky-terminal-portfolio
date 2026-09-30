@@ -2,6 +2,7 @@
 
 import commandList from '../models/commandList.js'
 import commandHistory from '../models/commandHistory.js'
+import changeTheme from './changeTheme.js'
 
 // Lookup table for commands and behaviour
 const commandTable = {
@@ -24,6 +25,12 @@ const handleCommand = (command) => {
     commandHandler(command)
   } else if (splitCommand[0] === 'echo') {
     commandHistory.addCommand(command, splitCommand.slice(1).join(' '))
+  } else if (splitCommand[0] === 'themes' && splitCommand.length == 2) {
+    if (changeTheme(splitCommand[1])) {
+      commandHistory.addCommand(command, `Changing theme to ${splitCommand[1]}...`)
+    } else {
+      commandHistory.addCommand(command, `${command}: command not found`)
+    }
   } else if (commandList.has(command)) {
     commandHistory.addCommand(command, commandList.get(splitCommand.join(' ')))
   } else {
