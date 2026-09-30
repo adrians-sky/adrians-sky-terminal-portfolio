@@ -6,11 +6,11 @@ import commandHistory from '../models/commandHistory.js'
 // Lookup table for commands and behaviour
 const commandTable = {
   clear: () => commandHistory.clear(),
-  source: () => {
+  source: (command) => {
     window.open('https://github.com/adrians-sky/adrians-sky-terminal-portfolio', '_blank')
     commandHistory.addCommand(command, 'Opening source code...')
   },
-  nvim: () => {
+  nvim: (command) => {
     window.open('https://github.com/adrians-sky/nvim-setup', '_blank')
     commandHistory.addCommand(command, 'Opening nvim config...')
   },
