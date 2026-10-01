@@ -29,6 +29,36 @@ const sendCommand = () => {
   }
 }
 
+// Get previous command
+const getPreviousCommand = () => {
+  const termLineValue = termLineInputRef.value
+  const previousCommand = commandHistory.getPreviousCommand()
+
+  if (previousCommand) {
+    termLineValue.value = previousCommand.command
+    command.value = previousCommand.command
+
+    // Move cursor to the end of input
+    const inputEnd = termLineValue.value.length
+    termLineValue.setSelectionRange(inputEnd, inputEnd)
+  }
+}
+
+// Get next command
+const getNextCommand = () => {
+  const termLineValue = termLineInputRef.value
+  const nextCommand = commandHistory.getNextCommand()
+
+  if (nextCommand) {
+    termLineValue.value = nextCommand.command
+    command.value = nextCommand.command
+
+    // Move cursor to the end of input
+    const inputEnd = termLineValue.value.length
+    termLineValue.setSelectionRange(inputEnd, inputEnd)
+  }
+}
+
 // Re-focus on input when commands are cleared
 watch(
   () => commandHistory.getCommands().length,
@@ -52,6 +82,8 @@ watch(
     type="text"
     v-model="command"
     @keyup.enter="sendCommand"
+    @keydown.up.prevent="getPreviousCommand"
+    @keydown.down.prevent="getNextCommand"
     :disabled="disabled"
   />
 </template>

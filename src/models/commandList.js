@@ -30,6 +30,8 @@ const commandList = new Map([
     nvim            - View Neovim Setup repository
     themes          - Change colour themes
     pwd             - Where Are We?
+
+    Up/Down Arrows  - Cycle previous commands
     `,
   ],
   ['pwd', window.location.hostname],
