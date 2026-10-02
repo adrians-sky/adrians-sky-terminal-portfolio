@@ -2,7 +2,7 @@
 
 import { reactive } from 'vue'
 
-const history = reactive({
+const commandHistory = reactive({
   commands: [],
   cleared: false,
   current: 0,
@@ -12,23 +12,18 @@ const history = reactive({
   },
 
   getPreviousCommand() {
-    if (this.commands.length <= 1 || this.current < 0) {
+    if (this.current <= 0) {
       return null
     }
-    if (this.current > 0) {
-      this.current--
-    }
-    return this.commands[this.current]
+    return this.commands[--this.current]
   },
 
   getNextCommand() {
-    if (this.commands.length <= 1 || this.current === this.commands.length - 1) {
+    if (this.current === this.commands.length - 1) {
       return null
     }
-    if (this.current < this.commands.length) {
-      this.current++
-    }
-    return this.commands[this.current]
+
+    return this.commands[++this.current]
   },
 
   addCommand(command, output) {
@@ -49,4 +44,4 @@ const history = reactive({
   },
 })
 
-export default history
+export default commandHistory
