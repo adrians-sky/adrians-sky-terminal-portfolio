@@ -2,6 +2,7 @@
 import { ref, onMounted, watch, nextTick } from 'vue'
 import handleCommand from '../utils/handleCommand.js'
 import commandHistory from '../models/commandHistory.js'
+import autocompleteCommand from '../utils/autocompleteCommand.js'
 
 const command = ref('')
 const disabled = ref(false)
@@ -59,6 +60,19 @@ const getNextCommand = () => {
   }
 }
 
+// Autocomplete current command
+const autocompleteCommandInput = () => {
+  const termLineValue = termLineInputRef.value
+  const autocompletedCommand = autocompleteCommand(command.value.trim())
+
+  termLineValue.value = autocompletedCommand
+  command.value = autocompletedCommand
+
+  // Move cursor to the end of input
+  const inputEnd = termLineValue.value.length
+  termLineValue.setSelectionRange(inputEnd, inputEnd)
+}
+
 // Re-focus on input when commands are cleared
 watch(
   () => commandHistory.getCommands().length,
@@ -84,6 +98,7 @@ watch(
     @keyup.enter="sendCommand"
     @keydown.up.prevent="getPreviousCommand"
     @keydown.down.prevent="getNextCommand"
+    @keydown.tab.prevent="autocompleteCommandInput"
     :disabled="disabled"
   />
 </template>
