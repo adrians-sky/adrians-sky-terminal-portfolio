@@ -1,6 +1,6 @@
 // Processes and Adds Commands to History
 
-import commandList from '../models/commandList.js'
+import commandInputOutputList from '../models/commandInputOutputList.js'
 import commandHistory from '../models/commandHistory.js'
 import changeTheme from './changeTheme.js'
 
@@ -31,8 +31,8 @@ const handleCommand = (command) => {
     } else {
       commandHistory.addCommand(command, `${command}: command not found`)
     }
-  } else if (commandList.has(command)) {
-    commandHistory.addCommand(command, commandList.get(splitCommand.join(' ')))
+  } else if (commandInputOutputList.has(command)) {
+    commandHistory.addCommand(command, commandInputOutputList.get(splitCommand.join(' ')))
   } else {
     commandHistory.addCommand(command, `${splitCommand.join(' ')}: command not found`)
   }

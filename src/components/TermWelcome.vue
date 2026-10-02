@@ -1,6 +1,6 @@
 <script setup>
 import TermLinePs1 from './TermLinePs1.vue'
-import commandList from '../models/commandList.js'
+import commandInputOutputList from '../models/commandInputOutputList.js'
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import commandList from '../models/commandList.js'
     <TermLinePs1 />
     <span id="termWelcomeFakeCommand">welcome</span>
   </div>
-  <div v-html="commandList.get('welcome')" id="termWelcomeOutput"></div>
+  <div v-html="commandInputOutputList.get('welcome')" id="termWelcomeOutput"></div>
 </template>
 
 <style scoped>

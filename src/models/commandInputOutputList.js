@@ -1,7 +1,7 @@
 // Commands and Outputs
 import dedent from 'dedent'
 
-const commandList = new Map([
+const commandInputOutputList = new Map([
   [
     'welcome',
     `
@@ -30,6 +30,7 @@ const commandList = new Map([
     nvim            - View Neovim Setup repository
     themes          - Change colour themes
     pwd             - Where Are We?
+    help            - View available commands
 
     Up/Down Arrows  - Cycle previous commands
     `,
@@ -54,4 +55,4 @@ const commandList = new Map([
   // - theme
 ])
 
-export default commandList
+export default commandInputOutputList
