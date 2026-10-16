@@ -12,7 +12,7 @@ const commandTable = {
     commandHistory.addCommand(command, 'Opening source code...')
   },
   nvim: (command) => {
-    window.open('https://github.com/adrians-sky/nvim-setup', '_blank')
+    window.open('https://github.com/adrians-sky/nvim-config', '_blank')
     commandHistory.addCommand(command, 'Opening nvim config...')
   },
 }

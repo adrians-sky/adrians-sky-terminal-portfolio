@@ -25,9 +25,10 @@ const commandInputOutputList = new Map([
     'help',
     dedent`
     welcome         - View Welcome Message
+    about           - About me and this website
     clear           - Clear the terminal screen
     source          - View this website's source code on GitHub
-    nvim            - View Neovim Setup repository
+    nvim            - View Neovim config repository
     themes          - Change colour themes
     pwd             - Where Are We?
     help            - View available commands
@@ -42,6 +43,17 @@ const commandInputOutputList = new Map([
     iceberg   tokyonight-night    catppuccin-macchiato    rose-pine
 
     Usage: themes [THEME]
+    `,
+  ],
+  [
+    'about',
+    dedent`
+    Hey, I'm Adrian Curammeng.
+
+    I'm a student of Seneca Polytechnic's BSD program, based in
+    Toronto, Canada. I enjoy creating weird, unique web applications.
+
+    This website was built using Vue.js and deployed on Netlify.
     `,
   ],
 
