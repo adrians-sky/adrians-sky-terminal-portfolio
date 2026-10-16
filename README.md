@@ -6,8 +6,6 @@
 
 A terminal-styled portfolio website.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/adrians-sky/adrians-sky-terminal-portfolio)
-
 </div>
 
 # Tech Stack
