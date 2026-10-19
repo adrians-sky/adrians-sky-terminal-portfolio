@@ -41,6 +41,7 @@ const commandHistory = reactive({
   clear() {
     this.commands = []
     this.cleared = true
+    this.current = 0
   },
 })
 
